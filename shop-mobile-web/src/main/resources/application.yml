@@ -1,0 +1,16 @@
+server:
+  port: 8764
+#服务注入注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#配置freemarker模板，文件后缀名为.ftl, 文件路径为/templates/xxx.ftl
+spring:
+  freemarker:
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+    charset: utf-8
+  #服务名称为mobile
+  application:
+    name: mobile

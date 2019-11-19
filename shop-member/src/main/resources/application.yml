@@ -1,0 +1,30 @@
+server:
+  port: 8762
+#  context-path: /member
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: shop-member
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://172.16.202.131:3306/shop_member?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+        enabled: false
+  redis:
+    database: 1
+    port: 6379
+    host: 172.16.202.131
+    password: 123456
+
+##队列
+messages:
+  queue: mail_queue
