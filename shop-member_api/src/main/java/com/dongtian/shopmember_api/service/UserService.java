@@ -1,16 +1,16 @@
 package com.dongtian.shopmember_api.service;
 
-
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@ResponseBody
-@RequestMapping("/member")
+@RestController
 public interface UserService {
-    @GetMapping("/register")
-    Map<String, Object> register(String username, String password);
+    @RequestMapping("/register")
+    Map<String, Object> register(@RequestParam("username") String username, @RequestParam("password") String password);
 
+    @RequestMapping("/login")
+    Map<String, Object> login(@RequestParam("username") String username, @RequestParam("password") String password);
 }

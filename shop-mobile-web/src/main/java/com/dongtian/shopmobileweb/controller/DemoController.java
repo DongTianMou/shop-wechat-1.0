@@ -1,22 +1,23 @@
 package com.dongtian.shopmobileweb.controller;
 
-import lombok.extern.slf4j.Slf4j;
+import com.dongtian.shopmobileweb.feign.UserFeign;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 @Controller
-@RequestMapping("/mobileWeb")
-@Slf4j
 public class DemoController {
-
-    public static final String INDEX = "index";
-
-    @RequestMapping("/index")
-    public String index(HttpServletRequest request, String token) {
-        log.info(" 我的web工程搭建成功啦!,userName:{}");
+    private static final String INDEX = "index";
+    @Autowired
+    UserFeign userFeign;
+    @RequestMapping("/demo/index")
+    public String index(String username,String password){
+        userFeign.login(username,password);
         return INDEX;
+
     }
+
 
 }

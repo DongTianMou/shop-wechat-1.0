@@ -13,18 +13,6 @@
     <name>shop-mobile-web</name>
     <description>Demo project for Spring Boot</description>
     <dependencies>
-        <!--引入framework模板-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--引入模块member_api模块-->
         <dependency>
             <groupId>com.dongtian</groupId>
             <artifactId>shop-member_api</artifactId>
